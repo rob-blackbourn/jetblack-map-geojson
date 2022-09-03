@@ -91,15 +91,25 @@ export default function App() {
   }
 
   return (
-    <Map
-      ref={ref}
-      center={center}
-      zoom={zoom}
-      tileProvider={osmTileProvider}
-      width={600}
-      height={400}
-    >
-      <GeoJSONLayer data={data} markerComponent={PinMarker} renderPopup={handleRenderFeature} />
-    </Map>
+    <div>
+      <div>
+        <h2>Custom Markers</h2>
+
+        <p>
+          The <code>markerComponent</code> prop is used to provide custom markers.
+        </p>
+      </div>
+
+      <Map
+        ref={ref}
+        center={center}
+        zoom={zoom}
+        tileProvider={osmTileProvider}
+        width={600}
+        height={400}
+      >
+        <GeoJSONLayer data={data} markerComponent={PinMarker} renderPopup={handleRenderFeature} />
+      </Map>
+    </div>
   )
 }

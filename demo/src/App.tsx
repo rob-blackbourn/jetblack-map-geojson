@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Link, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Link, Routes, Route } from 'react-router-dom'
 
 import LayerExample from './pages/LayerExample'
 import LoaderExample from './pages/LoaderExample'
@@ -8,7 +8,7 @@ import MarkerExample from './pages/MarkerExample'
 export default function App() {
   return (
     <div style={{ marginTop: 50 }}>
-      <BrowserRouter>
+      <Router>
         <div>
           <h1>@jetblack/map-geojson demos</h1>
           <nav>
@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/loader" element={<LoaderExample />} />
           <Route path="/marker" element={<MarkerExample />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   )
 }

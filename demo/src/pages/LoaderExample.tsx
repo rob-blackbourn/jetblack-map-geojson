@@ -95,19 +95,34 @@ export default function LoaderExample() {
   }
 
   return (
-    <Map
-      ref={ref}
-      center={center}
-      zoom={zoom}
-      tileProvider={osmTileProvider}
-      width={800}
-      height={400}
-    >
-      <GeoJSONLayer
-        data={data}
-        requestFeatureStyle={handleRequestFeatureStyle}
-        renderPopup={handleRenderFeature}
-      />
-    </Map>
+    <div>
+      <div>
+        <h2>Loader</h2>
+
+        <p>
+          This example uses <code>fetch</code> to dynamically load features.
+        </p>
+
+        <p>
+          It also uses the <code>renderFeatureStyle</code> prop to create a hover effect, and the{' '}
+          <code>renderPopup</code> prop to add a tooltip.
+        </p>
+      </div>
+
+      <Map
+        ref={ref}
+        center={center}
+        zoom={zoom}
+        tileProvider={osmTileProvider}
+        width={800}
+        height={400}
+      >
+        <GeoJSONLayer
+          data={data}
+          requestFeatureStyle={handleRequestFeatureStyle}
+          renderPopup={handleRenderFeature}
+        />
+      </Map>
+    </div>
   )
 }
