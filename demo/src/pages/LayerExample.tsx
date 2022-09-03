@@ -138,6 +138,10 @@ export default function App() {
             <li>Polygon</li>
           </ul>
         </p>
+
+        <p>
+          It also uses the <code>requestFeatureStyle</code> prop to style some of the components.
+        </p>
       </div>
 
       <Map
