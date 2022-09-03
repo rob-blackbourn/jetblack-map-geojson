@@ -15,9 +15,10 @@
   "main": "dist/index.js",
   "module": "dist/index.ems.js",
   "scripts": {
-    "start": "npm run-script build && rollup --config rollup.demo.config.js --watch",
-    "build": "rimraf dist && rollup -c",
-    "dev": "rimraf dist && rollup -c -w",
+    "start": "concurrently --group npm:dev npm:demo",
+    "demo": "rollup --config rollup.demo.config.js --watch",
+    "build": "rimraf dist && rollup --config",
+    "dev": "rollup --config --watch",
     "test": "jest"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "@types/react": "^18.0.10",
     "@types/react-dom": "^18.0.5",
     "babel-loader": "^8.2.5",
+    "concurrently": "^7.3.0",
     "jest": "^28.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
