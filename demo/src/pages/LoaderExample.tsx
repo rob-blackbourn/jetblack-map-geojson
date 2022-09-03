@@ -100,8 +100,8 @@ export default function LoaderExample() {
       center={center}
       zoom={zoom}
       tileProvider={osmTileProvider}
-      width={1000}
-      height={600}
+      width={800}
+      height={400}
     >
       <GeoJSONLayer
         data={data}

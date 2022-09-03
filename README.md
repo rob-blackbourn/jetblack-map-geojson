@@ -2,7 +2,19 @@
 
 A GeoJSON layer for @jetblack/map.
 
-## Example
+## Demo
+
+You can see a demo of the map [here](https://rob-blackbourn.github.io/jetblack-example-map/geojson-features).
+
+There are some examples of map usage in the `demos` folder. These can be run
+with `npm`.
+
+```bash
+npm install
+npm start
+```
+
+## Usage
 
 Here is an example which demonstrates some different geojson features.
 

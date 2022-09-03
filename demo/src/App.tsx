@@ -7,10 +7,10 @@ import MarkerExample from './pages/MarkerExample'
 
 export default function App() {
   return (
-    <div>
+    <div style={{ marginTop: 50 }}>
       <BrowserRouter>
         <div>
-          <h1>Home</h1>
+          <h1>@jetblack/map-geojson demos</h1>
           <nav>
             <Link to="/">Layer</Link>
             &nbsp;|&nbsp;

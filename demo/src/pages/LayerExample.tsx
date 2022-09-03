@@ -124,15 +124,32 @@ export default function App() {
   }
 
   return (
-    <Map
-      ref={ref}
-      center={center}
-      zoom={zoom}
-      tileProvider={osmTileProvider}
-      width={600}
-      height={400}
-    >
-      <GeoJSONLayer data={data} requestFeatureStyle={handleRequestFeatureStyle} />
-    </Map>
+    <div>
+      <div>
+        <h2>Layers</h2>
+
+        <p>
+          This example demonstrates the use of the GeoJSONLayer with the following features:
+          <ul>
+            <li>Point</li>
+            <li>MultiPoint</li>
+            <li>LineString</li>
+            <li>MultiLineString</li>
+            <li>Polygon</li>
+          </ul>
+        </p>
+      </div>
+
+      <Map
+        ref={ref}
+        center={center}
+        zoom={zoom}
+        tileProvider={osmTileProvider}
+        width={800}
+        height={400}
+      >
+        <GeoJSONLayer data={data} requestFeatureStyle={handleRequestFeatureStyle} />
+      </Map>
+    </div>
   )
 }
