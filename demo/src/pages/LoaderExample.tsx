@@ -2,7 +2,16 @@ import React, { SVGProps, useEffect, useRef, useState } from 'react'
 
 import { Feature } from 'geojson'
 
-import { Coordinate, Map, Point, osmTileProvider, useClick, useDrag, useZoom } from '@jetblack/map'
+import {
+  Coordinate,
+  Map,
+  Point,
+  Popup,
+  osmTileProvider,
+  useClick,
+  useDrag,
+  useZoom,
+} from '@jetblack/map'
 import { FeatureState, GeoJSONLayer } from '../../../dist'
 
 const GREENWICH_OBSERVATORY: Coordinate = {
@@ -65,22 +74,21 @@ export default function LoaderExample() {
     }
   }
 
-  const handleRenderFeature = (feature: Feature) => {
+  const handleRenderFeature = (feature: Feature, point: Point) => {
     if (!(feature && feature.properties)) {
       return null
     }
 
     return (
-      <div
-        style={{
-          backgroundColor: 'black',
-          color: 'white',
-          padding: 2,
-          borderRadius: 5,
-          fontSize: '75%',
-        }}
-      >
-        <table>
+      <Popup point={point}>
+        <table
+          style={{
+            backgroundColor: 'rgb(255, 255, 255, 0.6)',
+            borderRadius: 5,
+            maxWidth: 300,
+            padding: 2,
+          }}
+        >
           <tbody>
             {Object.entries(feature.properties).map(([key, value]) => (
               <tr key={key}>
@@ -90,7 +98,7 @@ export default function LoaderExample() {
             ))}
           </tbody>
         </table>
-      </div>
+      </Popup>
     )
   }
 
