@@ -11,6 +11,7 @@ export default function App() {
       <Router>
         <div>
           <h1>@jetblack/map-geojson demos</h1>
+
           <nav>
             <Link to="/">Layer</Link>
             &nbsp;|&nbsp;
@@ -19,6 +20,7 @@ export default function App() {
             <Link to="/marker">Marker</Link>
           </nav>
         </div>
+
         <Routes>
           <Route path="/" element={<LayerExample />}></Route>
           <Route path="/loader" element={<LoaderExample />} />
